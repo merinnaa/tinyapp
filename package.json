@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/merinnaa/tinyapp/issues"
   },
-  "homepage": "https://github.com/merinnaa/tinyapp#readme"
+  "homepage": "https://github.com/merinnaa/tinyapp#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
 }
