@@ -88,6 +88,34 @@ app.post("/urls/:id/delete", (req, res) => {
     res.redirect("/urls");
   }
 });
+// GET /register
+app.get("/register", (req, res) => {
+  const user = users[req.session.userId];
+  if (user) {
+    res.redirect('/urls');
+  } else {
+    res.render("register", {user: req.session.user});
+  }
+});
+
+// POST /login
+app.post("/login", (req, res) => {
+  const { email, password } = req.body;
+
+  const foundUser = getUserByEmail(email, users);
+
+  if (!foundUser) {
+    return res.status(403).send("<h3>Invalid Email or Password</h3>");
+  }
+ 
+  const isPasswordCorrect = bcrypt.compareSync(password, foundUser.password);
+  if (!isPasswordCorrect) {
+    return res.status(403).send("<h3>Invalid Email or Password</h3>");
+  }
+
+  req.session.userId = foundUser.id;
+  res.redirect('/urls');
+});
 app.listen(PORT, () => {
   console.log(`Example app listening on port ${PORT}!`);
 });
