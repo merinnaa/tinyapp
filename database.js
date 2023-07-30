@@ -1,5 +1,5 @@
 
-// Example defined users and urlDatabase
+// users and urlDatabase constants
 const users = {
   userRandomID: {
     id: "userRandomID",

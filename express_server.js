@@ -101,7 +101,7 @@ app.post("/urls", (req, res) => {
     const longURL  = req.body.longURL;
     const shortURL = generateRandomString();
 
-    //Associate the userID with the created URL in urlDatabase
+    
     urlDatabase[shortURL] = {
       longURL,
       userID: user.id
