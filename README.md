@@ -27,6 +27,7 @@ To start the project, run the following command:
 `npm start`
 
 To run tests, use the following command:
+
 `npm run test`
 
 ### How To Use TinyApp
