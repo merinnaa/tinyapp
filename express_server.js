@@ -176,7 +176,7 @@ app.post("/login", (req, res) => {
  
   const isPasswordCorrect = bcrypt.compareSync(password, foundUser.password);
   if (!isPasswordCorrect) {
-    return res.status(403).send("<h3>Invalid Email or Password</h3>");
+    //return res.status(403).send("<h3>Invalid Email or Password</h3>");
   }
 
   req.session.userId = foundUser.id;
